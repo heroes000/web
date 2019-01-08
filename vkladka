@@ -1,0 +1,29 @@
+<div class="wrapper">
+							    <div class="tabs">
+							        <span class="tab">Москва</span> / 
+							        <span class="tab">Караганда</span>		              
+							    </div>
+							    <div class="tab_content">
+							        <div class="tab_item">+7 (999) 999-99-99</div>
+							        <div class="tab_item">+6 (808) 777-00-00</div>
+							    </div>
+						   </div>
+               
+$(".top_phone .wrapper .tab").click(function() {
+		$(".top_phone .wrapper .tab").removeClass("active").eq($(this).index()).addClass("active");
+		$(".top_phone .tab_item").hide().eq($(this).index()).fadeIn()
+	}).eq(0).addClass("active");
+  
+ .top_phone .wrapper .tab {
+    font-weight: normal
+    line-height: 45px
+    text-transform: uppercase
+    cursor: pointer
+ }   
+.top_phone
+ .wrapper .active  
+    text-decoration: underline
+.top_phone
+ .tab_item 
+    font-size: 35px
+               
