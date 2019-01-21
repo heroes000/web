@@ -27,3 +27,29 @@ $(".top_phone .wrapper .tab").click(function() {
  .tab_item 
     font-size: 35px
                
+==========================================
+—— Выпадающее  МЕНЮ —
+
+<ul class="mc_wrap">
+   <li class="mc_item_wrap active">
+   
+     <div class="mc_item clearfix">
+     	<a href="#">
+     		<img>
+     		<h4>Кузовной ремонт</h4>
+     	</a>
+     	<div class="mc_toggl"></div>  —> кнопка
+     </div>
+         /*—— Выпадающее меню (display: none;)—*/
+     <ul>
+	<li><a href="#">Стальные работы</a></li>
+	<li><a href="#">Жестяные работы</a></li>
+	<li><a href="#">Арматурные работы</a></l>
+     </ul>
+     
+  </li>  
+  
+—— jQuery —
+$(".mc_toggl").click(function() {
+		$(this).parent().parent().children('ul').slideToggle();
+	});
