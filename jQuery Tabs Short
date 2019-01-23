@@ -53,3 +53,10 @@ $(".top_phone .wrapper .tab").click(function() {
 $(".mc_toggl").click(function() {
 		$(this).parent().parent().children('ul').slideToggle();
 	});
+===========================================================
+
+//equalheight - одинаковая высота колонок
+//Пример списка элементов:
+//var eqElement = ".cat_container > div, .home_news > div"
+	var eqElement = ".hi_item"
+	$(window).load(function(){equalheight(eqElement);}).resize(function(){equalheight(eqElement);});
