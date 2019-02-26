@@ -55,8 +55,115 @@ $(".mc_toggl").click(function() {
 	});
 ===========================================================
 
-//equalheight - одинаковая высота колонок
-//Пример списка элементов:
-//var eqElement = ".cat_container > div, .home_news > div"
-	var eqElement = ".hi_item"
-	$(window).load(function(){equalheight(eqElement);}).resize(function(){equalheight(eqElement);});
+**************************************************
+-- Меню гамбургер с Bootstrap SASS
+
+<div class="col-md-9">
+  <div class="phone-wrap">
+	<div class="phone">+7 (495) 00-99-56</div>
+	<a href="#" class="toggle-mnu hidden-lg"><span></span></a>
+  </div>
+</div>
+
+<div class="col-md-12">
+	<nav class="main-mnu">
+		<ul>
+		  <li class="active"><a href="#">Главная</a></li>
+		  <li><a href="#">О компании</a></li>
+		  <li><a href="#">Оценка</a></li>
+		  <li><a href="#">Сделки M&amp;A</a></li>
+		  <li><a href="#">Бухгалтерские услуги</a></li>
+		  <li><a href="#">Контакты</a></li>
+		</ul>
+	</nav>						
+</div>
+
+//- позицоионирование кнопки SASS
+  .toggle-mnu
+    float: right
+    position: absolute
+    right: 0
+    top: 0
+    text-align: center
+    line-height: 52px
+    display: block
+    width: 28px
+    height: 28px
+    margin-top: 20px
+
+//-- Стилизация кнопки меню 
+.toggle-mnu span:after,
+.toggle-mnu span:before 
+  content: ""
+  position: absolute
+  left: 0
+  top: 9px
+
+.toggle-mnu span:after
+  top: 18px
+
+.toggle-mnu span 
+  position: relative
+  display: block
+
+.toggle-mnu span,
+.toggle-mnu span:after,
+.toggle-mnu span:before
+  width: 100%
+  height: 2px
+  background-color: #fff
+  transition: all 0.3s
+  backface-visibility: hidden
+  border-radius: 2px
+
+.toggle-mnu.on span 
+  background-color: transparent
+
+.toggle-mnu.on span:before 
+  transform: rotate(45deg) translate(-1px, 0px)
+
+.toggle-mnu.on span:after 
+  transform: rotate(-45deg) translate(6px, -7px)
+
+.toggle-mnu.on + #menu 
+  opacity: 1
+  visibility: visible
+  
+---- Стили в Media.css
+
+.main-mnu
+  display: none
+  float: right
+  min-width: 295px
+  text-align: right
+  background-color: #1C242C
+  top: 10px
+  border-bottom: #111821 4px solid
+  border-top: #232D3B 4px solid
+  position: absolute
+  right: 15px
+  z-index: 2
+  ul
+    li
+      display: block
+      line-height: 0
+      padding: 0
+      &.active
+    a
+	display: block
+	line-height: 48px
+	padding: 0 20px
+	background-color: transparent
+	font-size: 15px
+	text-transform: uppercase
+	transition: all .5s ease
+	border-bottom: #222C36 1px solid
+	
+JS------
+
+ $(".toggle-mnu").click(function(){
+    	$(this).toggleClass("on"); -- добавляем класс
+    	$(".main-mnu").slideToggle(); -- выпадение меню
+    });
+****************************************************
+*****************************************************
